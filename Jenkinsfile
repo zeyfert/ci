@@ -5,7 +5,7 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             // label 'test-app'
-            additionalBuildArgs '--build-arg version=1.0.0' '--tag test:123'
+            additionalBuildArgs '--build-arg version=1.0.0 --tag test:123'
         }
     }
     options {
