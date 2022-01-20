@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker { image 'python' }
     }
+    options { timestamps () }
     stages {
         stage('Build') {
             steps {
