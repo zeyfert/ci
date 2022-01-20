@@ -12,12 +12,12 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '1', artifactNumToKeepStr: '1'))
         timestamps ()
     }
-    // stages {
-    //     stage('Build') {
-    //         steps {
-    //             sh 'docker build .'
-    //             deleteDir()
-    //         }
-    //     }
-    // }
+    stages {
+        stage('Build') {
+            steps {
+                // sh 'docker build .'
+                deleteDir()
+            }
+        }
+    }
 }
