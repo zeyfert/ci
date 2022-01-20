@@ -1,11 +1,9 @@
-FROM python:latest
+FROM python:3
 
-COPY ./src /app
+WORKDIR /usr/src/app
 
-WORKDIR /app
+COPY ./src/* .
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ['python']
-
-CMD ['app.py']
+CMD ['python', 'app.py']
