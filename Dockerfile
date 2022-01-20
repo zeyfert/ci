@@ -7,3 +7,5 @@ COPY ./src/* ./
 RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
+
+TAG web-app:1.0.0
