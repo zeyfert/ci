@@ -10,12 +10,17 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build . --tag docker-registry:5000/python/my-web-app:1.0.0'
-                deleteDir()
+                
             }
         }
         stage('Push') {
             steps {
                 sh 'docker push docker-registry:5000/python/my-web-app:1.0.0'
+            }
+        }
+        stage('Clean working directory') {
+            steps {
+                deleteDir()
             }
         }
     }
