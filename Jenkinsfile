@@ -6,9 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'python --version'
-                // sh 'source ./env/bin/activate'
-                // sh './env/bin/python -m pip install -r requirements.txt'
-                // sh './env/bin/python app.py'
+                deleteDir()
             }
         }
     }
