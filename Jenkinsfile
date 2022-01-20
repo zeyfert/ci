@@ -6,8 +6,8 @@ pipeline {
                 sh 'python3 -m venv env'
                 sh 'pwd'
                 sh 'source ./env/bin/activate'
-                sh 'sudo pip3 install -r requirements.txt'
-                sh 'python app.py'
+                sh './env/bin/pip install -r requirements.txt'
+                sh './env/bin/python app.py'
             }
         }
     }
