@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Test'
+                sh 'docker build .'
                 deleteDir()
             }
         }
