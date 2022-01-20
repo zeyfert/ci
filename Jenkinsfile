@@ -4,7 +4,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            label 'test-app'
+            // label 'test-app'
             additionalBuildArgs '--build-arg version=1.0.0'
         }
     }
