@@ -1,14 +1,7 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'
-            // label 'test-app'
-            additionalBuildArgs '--build-arg version=1.0.0 --tag test:123'
-            registryUrl 'http://docker-registry:5000'
-        }
-    }
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr: '1', artifactNumToKeepStr: '1'))
         timestamps ()
@@ -16,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // sh 'docker build .'
+                sh 'docker build . --tag my-wep-app:1.0.0'
                 deleteDir()
             }
         }
