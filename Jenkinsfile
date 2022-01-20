@@ -1,12 +1,17 @@
+properties([disableConcurrentBuilds()])
+
 pipeline {
     agent {
-        docker { image 'python' }
+        label 'master'
     }
-    options { timestamps () }
+    options {
+        buildDiscarder(logRotator(numToKeep: '3', artifactNumToKeepStr: '1'))
+        timestamps ()
+    }
     stages {
         stage('Build') {
             steps {
-                sh 'python --version'
+                echo 'Test'
                 deleteDir()
             }
         }
