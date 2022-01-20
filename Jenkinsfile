@@ -6,6 +6,7 @@ pipeline {
             filename 'Dockerfile'
             // label 'test-app'
             additionalBuildArgs '--build-arg version=1.0.0 --tag test:123'
+            registryUrl 'docker-registry:5000'
         }
     }
     options {
