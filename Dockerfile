@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
 
-TAG web-app:1.0.0
+LABEL web-app:1.0.0
